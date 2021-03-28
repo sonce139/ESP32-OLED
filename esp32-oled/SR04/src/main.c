@@ -1,3 +1,7 @@
+/*
+Author: SoniC
+Faculty of Computer Engineering - UIT
+*/
 
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
@@ -13,8 +17,8 @@
 #define RMT_TX_CARRIER_EN 0         /* Disable carrier */
 #define rmt_item32_tIMEOUT_US 9500 /*!< RMT receiver timeout value(us) */
 /* RMT counter value for 10 us.(Source clock is APB clock) */
-#define RMT_TICK_10_US (80000000/RMT_CLK_DIV/100000) 
-#define ITEM_DURATION(d) ((d & 0x7fff)*10/RMT_TICK_10_US)
+#define RMT_TICK_10_US (80000000 / RMT_CLK_DIV / 100000) 
+#define ITEM_DURATION(d) ((d & 0x7fff) * 10 / RMT_TICK_10_US)
 
 #define PIN_TRIGGER 5
 #define PIN_ECHO 4

@@ -1,3 +1,7 @@
+/*
+Author: SoniC
+Faculty of Computer Engineering - UIT
+*/
 
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"

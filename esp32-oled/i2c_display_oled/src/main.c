@@ -1,3 +1,8 @@
+/*
+Author: SoniC
+Faculty of Computer Engineering - UIT
+*/
+
 #include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -8,8 +13,6 @@
 
 #define SDA_PIN GPIO_NUM_5
 #define SCL_PIN GPIO_NUM_4
-
-#define tag "SSD1306"
 
 void i2c_master_init()
 {

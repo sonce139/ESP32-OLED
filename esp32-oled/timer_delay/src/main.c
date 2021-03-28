@@ -1,3 +1,7 @@
+/*
+Author: SoniC
+Faculty of Computer Engineering - UIT
+*/
 
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
@@ -44,7 +48,7 @@ void IRAM_ATTR timer_isr()
     timer_spinlock_give(TIMER_GROUP_0);
 }
 
-static void conf_timer(){
+void conf_timer(){
     /* Select and initialize basic parameters of the timer */
     timer_config_t config = {
         .divider = TIMER_DIVIDER,
@@ -67,7 +71,7 @@ static void conf_timer(){
 }
 
 
-static void timer_task(void *pvParameter)
+void timer_task(void *pvParameter)
 {
     while (1) {
         // Sleep until the ISR gives us something to do, if nothing is recieved then waits forever
