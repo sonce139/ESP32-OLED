@@ -73,7 +73,7 @@ void task_ssd1306_display_clear(void *para)
 	vTaskDelete(NULL);
 }
 
-void task_ssd1306_display_text(const void *arg_text) 
+void task_ssd1306_display_text(void *arg_text) 
 {
 	char *text = (char*)arg_text;
 	uint8_t text_len = strlen(text);
@@ -134,5 +134,5 @@ void app_main(void)
 
 	xTaskCreate(&task_ssd1306_display_clear, "ssd1306_display_clear",  2048, NULL, 6, NULL);
 	vTaskDelay(100/portTICK_PERIOD_MS);
-	xTaskCreate(&task_ssd1306_display_text, "display", 1024, "hello world\nhello\nhello world", 2, NULL);
+	xTaskCreate(task_ssd1306_display_text, "task_ssd1306_display_text", 1024*3, "hello world\n19522142\nhello world", 5, NULL);
 }
